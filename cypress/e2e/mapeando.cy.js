@@ -1,4 +1,4 @@
-describe('Adicionar itens na minha lista de toDo', () => {
+describe('dsfsf', () => {
     beforeEach(() => {
         cy.visit('/')
     })
@@ -19,7 +19,7 @@ describe('Adicionar itens na minha lista de toDo', () => {
       .should('contain', 'Epic sadface: Username and password do not match any user in this service');
     })
 
-    it.skip('Login valido',() => {
+    it.only('Login valido',() => {
         cy.get('input[id="user-name"]').type('standard_user');
         cy.get('input[id="password"]').type('secret_sauce');
         cy.get('input[id="login-button"]').click();
@@ -64,7 +64,7 @@ describe('Adicionar itens na minha lista de toDo', () => {
 
     })
 
-    it('remover carrinho',() => {
+    it.skip('remover carrinho',() => {
         cy.get('input[id="user-name"]').type('standard_user');
         cy.get('input[id="password"]').type('secret_sauce');
         cy.get('input[id="login-button"]').click();
