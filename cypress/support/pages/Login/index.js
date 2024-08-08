@@ -1,3 +1,5 @@
+/// <reference types='cypress'/>
+
 const el = require('../Login/elements').ELEMENTS;
 class login {
     acessarHome(){
@@ -11,7 +13,7 @@ class login {
     }
 
     verificarLoginValido(){
-        cy.get(el.produtos).should('contain', 'Products');
+        cy.get(el.produtos).should('contain', el.msgProdutosPage);
     }
 
     preencherLoginInvalido(){
@@ -21,6 +23,6 @@ class login {
     }
     
     verificarLoginInvalido(){
-        cy.get(el.msgError).should('contain', 'Epic sadface: Username and password do not match any user in this service');
+        cy.get(el.msgError).should('contain', el.msdErrorTXT);
     }
 }export default new login();

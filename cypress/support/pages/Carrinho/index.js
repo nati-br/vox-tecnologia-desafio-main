@@ -1,59 +1,61 @@
+/// <reference types='cypress'/>
+
 const el = require('../Carrinho/elements').ELEMENTS;
 class carrinho {
 
     verificarListaDeProdutos(){
-        cy.get(el.classeItem)
-        .should('contain', 'Sauce Labs Backpack');
-        cy.get('.inventory_item_name')
-        .should('contain', 'Sauce Labs Bike Light');
-        cy.get('.inventory_item_name')
-        .should('contain', 'Sauce Labs Bolt T-Shirt');
-        cy.get('.inventory_item_name')
-        .should('contain', 'Sauce Labs Fleece Jacket');
-        cy.get('.inventory_item_name')
-        .should('contain', 'Sauce Labs Onesie');
-        cy.get('.inventory_item_name')
-        .should('contain', 'Test.allTheThings() T-Shirt (Red)');
+        cy.get(el.classeItemLista)
+        .should('contain', el.listaTxtItem1 );
+        cy.get(el.classeItemLista)
+        .should('contain',el.listaTxtItem2 );
+        cy.get(el.classeItemLista)
+        .should('contain',el.listaTxtItem3 );
+        cy.get(el.classeItemLista)
+        .should('contain',el.listaTxtItem4 );
+        cy.get(el.classeItemLista)
+        .should('contain',el.listaTxtItem5);
+        cy.get(el.classeItemLista)
+        .should('contain',el.listaTxtItem6 );
     }
 
     adicionarItemAoCarrinho(){
-        cy.get('#item_1_title_link')
+        cy.get(el.produto1)
       .parents(el.classeItemCarrinho)
       .find(el.btnAdicionaraoCarrinho)
       .click();
 
-      cy.get('#item_4_title_link')
+      cy.get(el.produto2)
       .parents(el.classeItemCarrinho)
       .find(el.btnAdicionaraoCarrinho)
       .click();
 
-      cy.get('#item_3_title_link')
+      cy.get(el.produto3)
       .parents(el.classeItemCarrinho)
       .find(el.btnAdicionaraoCarrinho)
       .click();
     }
 
     verificarQuantidadeDeItemNoCarrinho(){
-        cy.get('.shopping_cart_badge')
+        cy.get(el.quantidaDeItem)
        .should('have.text', '3');
     }
 
     clickPaginaDeCarrinho2(){
-        cy.get('.shopping_cart_link').click();
+        cy.get(el.btnPaginaDeCarrinho2).click();
     }
 
     verificarPaginaDeCarrinho2(){
-        cy.url().should('include', '/cart.html');
+        cy.url().should('include', el.link);
     }
 
     removerItemDoCarrinho(){
-        cy.get('#item_4_title_link')
-        .parents('.cart_item') 
-        .find('.btn_secondary.cart_button') 
+        cy.get(el.produto2)
+        .parents(el.classeRemoveItem) 
+        .find(el.btnRemoverItem) 
         .click(); 
     }
 
     clickParaCheckout(){
-        cy.get('a[class="btn_action checkout_button"]').click();
+        cy.get(el.btnProximapagina).click();
     }
 }export default new carrinho();

@@ -1,13 +1,15 @@
+/// <reference types='cypress'/>
+const el = require('../Checkout/elements').ELEMENTS;
 class checkout {
     preencherDados(){
-        cy.get('input[id="first-name"]').type('José');
-        cy.get('input[id="last-name"]').type('Cuervo');
-        cy.get('input[id="postal-code"]').type('53370-198');
-        cy.get('input[class="btn_primary cart_button"]').click();
+        cy.get(el.nome).type('José');
+        cy.get(el.sobrenome).type('Cuervo');
+        cy.get(el.cep).type('53370-198');
+        cy.get(el.btnClick).click();
     }
 
     validarCompra(){
-        cy.get('a[class="btn_action cart_button"').click()
-        cy.get('h2[class="complete-header"').should('have.text', 'THANK YOU FOR YOUR ORDER');
+        cy.get(el.btnComprar).click()
+        cy.get(el.validacao).should('have.text', el.msgSucess);
     }
 }export default new checkout();

@@ -1,8 +1,8 @@
 import login from "../support/pages/login";
 
 
-describe('Dado que faço um Login valido', () => {
-    it('E preencho as credenciais corretas', () => {
+describe('Login valido', () => {
+    it('Preenchendo os dados validos', () => {
         login.acessarHome();
         login.preencherLoginValido();
         login.verificarLoginValido();
@@ -11,8 +11,8 @@ describe('Dado que faço um Login valido', () => {
  
 });
 
-describe('Dado que faço um Login invalido', () => {
-    it('E preencho as credenciais incorretas', () => {
+describe('Login invalido', () => {
+    it('Preenchendo as credenciais incorretas', () => {
         login.acessarHome();
         login.preencherLoginInvalido();
         login.verificarLoginInvalido();
