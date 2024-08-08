@@ -1,6 +1,5 @@
 
-markdown
-Copiar código
+
 # vox-tecnologia-desafio
 
 ## Cenários propostos:
